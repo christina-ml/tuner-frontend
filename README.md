@@ -1,70 +1,110 @@
-# Getting Started with Create React App
+[![Pursuit Logo](https://avatars1.githubusercontent.com/u/5825944?s=200&v=4)](https://pursuit.org)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Tuner Front-End
 
-## Available Scripts
+## Getting Started
 
-In the project directory, you can run:
+- keep the backend running, open a new tab
+- `cd` to the front-end directory
+- `npm i`
+- `touch .env`
+- add the correct environmental variables
+- `npm start`
+- `npm test` to run cypress tests
 
-### `npm start`
+> _Note_: Remember to `git add`, `git commit` and `git push` regularly
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Using the [Tuner API that you built](https://github.com/joinpursuit/tuner-api/blob/main/README.md), you are going to create a frontend-only app.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Don't forget to keep your back-end API running during this build/
 
-### `npm test`
+#### Nav Bar
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+At the top of your app you should have a navigation bar.
 
-### `npm run build`
+- It displays a links to the route (`/songs`) at the top of the page.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Your app should also include the following routes:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<hr />
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### `/songs`
 
-### `npm run eject`
+- Displays a list of `song.title`, `song.is_favorite`, `song.artist` and `song.time` that are clickable to take the user to **`/songs/:id`** IMPORTANT - be sure it goes to the song's `id` **NOT** the array position. Since we are now using a database you should use the `id`.
+- Has a button that takes users to the `/songs/new` view
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<details><summary>Inspiration</summary>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![](./assets/index.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+</details>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+**IMPORTANT**
 
-## Learn More
+Your page should
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### `/songs/:index`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Displays the details of each song
+  - name
+  - artist
+  - album
+  - is_favorite
+  - time
+- Displays two buttons
+  - <kbd>back</kbd>, takes the user back to the `/songs` view
+  - <kbd>delete</kbd>, deletes the log and takes the user back to the `/songs` view
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- button for `edit` - which takes the user to the edit form for this song
 
-### Analyzing the Bundle Size
+<details><summary>Inspiration</summary>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+![](./assets/show.png)
 
-### Making a Progressive Web App
+</details>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### `/songs/new`
 
-### Advanced Configuration
+- Displays a form with the following inputs and appropriate labels:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+  - name (text)
+  - artist (text)
+  - album (text)
+  - is_favorite (boolean)
+  - time (text)
 
-### Deployment
+<details><summary>Inspiration</summary>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+![](./assets/new.png)
 
-### `npm run build` fails to minify
+</details>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Delete Functionality
+
+Make this functionality available on the show page
+
+## Edit Functionality
+
+Make a link to the edit form on the show page
+
+- Add an edit route `/songs/:id/edit`
+- Add an edit form that is pre-filled with the log to edit
+
+<details><summary>Inspiration</summary>
+
+![](./assets/edit.png)
+
+</details>
+
+
+### Bonuses
+
+- Style the app
+  - Look into the [holy grail layout](https://philipwalton.github.io/solved-by-flexbox/demos/holy-grail/)
+- It's annoying to have to use the edit form in order to update whether a song `is_favorite` or not. Make the star ⭐️ clickable from the Index page to toggle the value (both front and back end)
+- Use react-bootstrap
+- Use react-transition-group to transition between pages [Demo](https://reactrouter.com/web/example/animated-transitions)
+- write your own tests addtional tests for any new features you implement
+- add a 404 page
+- add functionality that when a user presses the delete button a confirmation appears first
