@@ -22,9 +22,10 @@ export default function Songs() {
                 <table>
                     <thead>
                         <tr>
-                            <th></th>
-                            <th>Take me there</th>
-                            <th>See this song</th>
+                            <th>Favorite</th>
+                            <th>Song</th>
+                            <th>Artist</th>
+                            <th>Time</th>
                         </tr>
                     </thead>
                     <tbody>
