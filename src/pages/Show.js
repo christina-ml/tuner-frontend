@@ -1,8 +1,10 @@
+import SongDetails from "../components/SongDetails";
+
 export default function Show() {
     return (
-        <div>
+        <div className="Show">
             <h2>Show</h2>
-            {/* <SongDetails /> */}
+            <SongDetails />
         </div>
     );
 }

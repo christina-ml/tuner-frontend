@@ -1,8 +1,10 @@
+import SongNewForm from "../components/SongNewForm";
+
 export default function New() {
     return (
-        <div>
+        <div className="New">
             <h2>New</h2>
-            {/* <SongNewForm /> */}
+            <SongNewForm />
         </div>
     );
 }

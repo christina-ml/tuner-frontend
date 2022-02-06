@@ -1,8 +1,10 @@
+import Songs from "../components/Songs";
+
 export default function Index() {
     return (
-        <div>
+        <div className="Index">
             <h2>Index</h2>
-            {/* <Songs /> */}
+            <Songs />
         </div>
     );
 }
