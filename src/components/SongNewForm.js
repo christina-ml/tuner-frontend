@@ -44,7 +44,7 @@ export default function SongNewForm() {
     return (
         <div className="New">
             <form onSubmit={handleSubmit}>
-                <label htmlFor="name">Name:</label>
+                <label htmlFor="name">Song Name:</label>
                 <input 
                     id="name" 
                     value={song.name}
@@ -60,6 +60,7 @@ export default function SongNewForm() {
                     type="text"
                     onChange={handleTextChange}
                     placeholder="Name of Artist"
+                    required
                 />
                 <label htmlFor="album">Album:</label>
                 <input 
