@@ -10,7 +10,9 @@ export default function Song({ song }) {
                 <span>➖</span>
             )}
         </td>
-        <td><Link to={`/songs/${song.id}`}>{song.name}</Link></td>
+        <td>
+            <Link to={`/songs/${song.id}`}>{song.name}</Link>
+        </td>
         <td>{song.artist}</td>
         <td>{song.time}</td>
     </tr> 
