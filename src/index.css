@@ -51,11 +51,11 @@ tbody tr:nth-child(even) {
   background: #f4eafd;
 }
 
-.New {
-  /* border: 1px solid gold;
+/* .New {
+  border: 1px solid gold;
   margin: auto;
-  width: 95%; */
-}
+  width: 95%;
+} */
 
 .New form {
   margin: auto;
